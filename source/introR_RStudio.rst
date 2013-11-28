@@ -3,32 +3,29 @@ Motivación
 **********
 
 Hay un mito en la tecnociencia según la cual las herramientas "no son buenas
-ni malas, sino dependen de como se utilicen". Sin embargo,
-las herramientas en efecto condicionan el quehacer, e incluso el sentido de
-la investigación científica. Este curso pretende enriquecer el abanico de las
-alternativas disponibles.
+ni malas, sino dependen de como se utilicen". Sin embargo, las herramientas en
+efecto condicionan el quehacer, e incluso el sentido de la investigación
+científica. Este curso pretende enriquecer el abanico de las alternativas
+disponibles.
 
 Se podría intentar ser políticamente correcto y decir que queda a juicio de
-cada quién decir si esta herramienta es mejor o peor que otras, pero no,
-este no es el caso. Desde el punto de vista de cualquier investigador
-riguroso el uso de R mejora con creces las funcionalidades que ofrece una
-hoja de cálculo, y en términos éticos y prácticos trabajar con software libre
-y de código abierto, basado en estándares abiertos, es sin duda una opción
-superior.
+cada quién decir si R es mejor o peor que otras herramientas estadísticas. Sin
+embargo, desde el punto de vista de cualquier investigador riguroso el uso de R
+mejora con creces las funcionalidades que ofrece una hoja de cálculo, y en
+términos éticos y prácticos trabajar con software libre y de código abierto,
+basado en estándares abiertos, es sin duda una opción superior.
 
 Muchos profesionales de la informática una vez graduados evaden las tareas de
-programación, de manera similar a como muchas personas evaden las
-matemáticas tanto como pueden. Esto se debe a que tanto una como la otra
-son, por lo general, muy mal enseñadas. En la actualidad,
-la programación es una destreza básica y fundamental al alcance de cualquier
-persona.
+programación, de manera similar a como muchas personas evaden las matemáticas
+tanto como pueden. Esto se debe a que tanto una como la otra son, por lo
+general, muy mal enseñadas. En la actualidad, la programación es una destreza
+básica y fundamental al alcance de cualquier persona.
 
-Estas notas buscan son una presentación de R basada en ejemplos,
-en lugar de hacer repaso pormenorizado de todos los conceptos y elementos del
-entorno R, se trabajará en base a demostraciones del flujo de trabajo usual
-para muchos usuarios de R con lo cuál se espera que cada persona gane
-comprensión de los retos y oportunidades que ofrece el uso de una
-herramienta de este tipo.
+Estas notas buscan son una presentación de R basada en ejemplos, en lugar de
+hacer repaso pormenorizado de todos los conceptos y elementos del entorno R, se
+trabajará en base a demostraciones del flujo de trabajo usual para muchos
+usuarios de R con lo cuál se espera que cada persona gane comprensión de los
+retos y oportunidades que ofrece el uso de una herramienta de este tipo.
 
 ¿Qué es R?
 ==========
@@ -40,11 +37,11 @@ Por lo tanto, el correcto manejo de R implica desarrollar destrezas de
 programación.
 
 R cuenta con el conjunto más extenso de métodos estadísticos disponibles en
-cualquier software estadístico, ya sea libre o privativo,
-además de potentes y flexibles capacidades de graficación. Sin embargo,
-el diseño de R en tanto que lenguaje de programación,
-presenta debilidades que han motivado críticas incluso por sus usuarios más
-fieles, un ejemplo de esto es el libro `The R inferno`_.
+cualquier software estadístico, ya sea libre o privativo, además de potentes y
+flexibles capacidades de graficación. Sin embargo, el diseño de R en tanto que
+lenguaje de programación, presenta debilidades que han motivado críticas
+incluso por sus usuarios más fieles, un ejemplo de esto es el libro
+`The R inferno`_.
 
 Descarga e instalación
 ======================
@@ -68,8 +65,8 @@ pueden tener incompatibilidad con los paquetes propios de R.
 Para resolver esto se configuran los repositorios según la información que
 aparece en: http://cran.r-project.org/bin/linux/
 
-Se generan paquetes de las últimas versiones de R para Debian, Redhat,
-SUSE y Ubuntu, si utiliza una distribución que no es compatible con ninguno
+Se generan paquetes de las últimas versiones de R para Debian, Redhat, SUSE y
+Ubuntu, si utiliza una distribución que no es compatible con ninguno
 de estos repositorios, puede compilar la última versión de R desde las fuentes
 http://cran.r-project.org/sources.html
 
@@ -131,10 +128,9 @@ Estructura de un proyecto
 
 Se recomienda que cada proyecto tenga una estructura de archivos con las
 carpetas: (puede traducir los nombres si lo desea): ``data``, ``documents``,
-``graphics``, ``images``, ``notes``, ``code``. U otra estructura adaptada a las
-preferencias del investigador, cualquiera es mejor que tener todos los archivos
-sueltos en una misma carpeta.
-
+``graphics`` , ``images``, ``notes``, ``code``. También puede ser otra
+estructura adaptada a las preferencias del investigador, cualquiera es mejor que
+tener todos los archivos sueltos en una misma carpeta.
 
 Ilustración 2: Estructura de un proyecto de análisis de datos
 
