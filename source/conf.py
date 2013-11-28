@@ -109,9 +109,7 @@ else:
 #html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-if on_rtd:
-    html_theme = []
-else:
+if not on_rtd:
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 
