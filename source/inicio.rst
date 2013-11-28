@@ -11,15 +11,13 @@ Contenidos:
 .. toctree::
    :maxdepth: 2
 
-   introR
-   RStudio
-   introducirDatos
+   introR_RStudio
    manejoDatos
    descriptivas
    ggplot2
-   knitr
-   modelosLineales
+   seriesTiempo
    multivariante
+   reportesDinamicos
 
 Índices y tablas
 ================
