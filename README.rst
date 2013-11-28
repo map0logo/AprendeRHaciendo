@@ -14,6 +14,7 @@ propios.
 
 .. image:: _static/by-nc-sa.eu_petit.png
    :target: http://creativecommons.org/licenses/by-nc-sa/4.0/
+
 Aprende R  Haciendo está licenciado bajo `Creative Commons (by-nc-sa)`_
 
 .. _Creative Commons (by-nc-sa): http://creativecommons.org/licenses/by-nc-sa/4.0/
