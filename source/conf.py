@@ -14,7 +14,10 @@
 import sys, os
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
-import sphinx_rtd_theme
+try:
+    import sphinx_rtd_theme
+except ImportError:
+    pass
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
