@@ -15,8 +15,9 @@ Contenidos:
    manejoDatos
    descriptivas
    ggplot2
-   seriesTiempo
+   regresion
    multivariante
+   seriesTiempo
    reportesDinamicos
 
 Índices y tablas
