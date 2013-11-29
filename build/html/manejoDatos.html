@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; Aprende R Haciendo 0.1 documentation</title>
+  <title>Manejo de Datos &mdash; Aprende R Haciendo 0.1 documentation</title>
   
 
   
@@ -47,7 +47,7 @@
 
   
     <link rel="top" title="Aprende R Haciendo 0.1 documentation" href="index.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="descriptivas.html"/>
+        <link rel="next" title="Estadística descriptivas" href="descriptivas.html"/>
         <link rel="prev" title="Motivación" href="introR_RStudio.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -72,7 +72,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introR_RStudio.html">Motivación</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="introR_RStudio.html#que-es-r">¿Qué es R?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introR_RStudio.html#descarga-e-instalacion">Descarga e instalación</a></li>
@@ -80,6 +80,15 @@
 <li class="toctree-l2"><a class="reference internal" href="introR_RStudio.html#un-primer-ejemplo">Un primer ejemplo</a></li>
 </ul>
 </li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Manejo de Datos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#guardar-y-cargar-datos-en-r">Guardar y cargar datos en R</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="descriptivas.html">Estadística descriptivas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ggplot2.html">ggplot2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seriesTiempo.html">Series de Tiempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multivariante.html">Análisis Multivariante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reportesDinamicos.html">Reportes dinámicos</a></li>
 </ul>
 
         
@@ -101,19 +110,136 @@
         <div class="rst-content">
           <ul class="wy-breadcrumbs">
   <li><a href="inicio.html">Docs</a> &raquo;</li>
-  <li><a href="">&lt;no title&gt;</a></li>
+  <li><a href="">Manejo de Datos</a></li>
   
 </ul>
 <hr/>
 
           
-  
+  <div class="section" id="manejo-de-datos">
+<h1>Manejo de Datos<a class="headerlink" href="#manejo-de-datos" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="guardar-y-cargar-datos-en-r">
+<h2>Guardar y cargar datos en R<a class="headerlink" href="#guardar-y-cargar-datos-en-r" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="conjuntos-de-datos-rdata">
+<h3>Conjuntos de datos Rdata<a class="headerlink" href="#conjuntos-de-datos-rdata" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los datos en R se pueden guardar como archivos <tt class="docutils literal"><span class="pre">.Rdata</span></tt> usando la función
+<tt class="docutils literal"><span class="pre">save()</span></tt>. Después de lo cual pueden cargarse en R mediante la función
+<tt class="docutils literal"><span class="pre">load()</span></tt>. En el código a continuación <tt class="docutils literal"><span class="pre">rm()</span></tt> borra el objeto <tt class="docutils literal"><span class="pre">a</span></tt> de R.</p>
+<div class="highlight-r"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre>a <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span>
+save<span class="p">(</span>a<span class="p">,</span> file<span class="o">=</span><span class="s">&quot;./data/dumData.Rdata&quot;</span><span class="p">)</span>
+rm<span class="p">(</span>a<span class="p">)</span>
+load<span class="p">(</span><span class="s">&quot;./data/dumData.Rdata&quot;</span><span class="p">)</span>
+print<span class="p">(</span>a<span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Cada vez que se dice <em>cargar en R</em> o <em>borrar de R</em>, se refiere al espacio de
+trabajo de R, donde residen los objetos a los que R tiene acceso para realizar
+operaciones.</p>
+<p>En la línea 1, se crea un vector numérico con los valores <cite>1, 2, ... 10</cite> usando
+la notación resumida <tt class="docutils literal"><span class="pre">1:10</span></tt> y se asigna a la variable <tt class="docutils literal"><span class="pre">a</span></tt>.</p>
+<p>Se utiliza la función <tt class="docutils literal"><span class="pre">save()</span></tt> para guardarlo en un archivo con el nombre
+<tt class="docutils literal"><span class="pre">dumData.Rdata</span></tt>, debe existir en este caso una carpeta <tt class="docutils literal"><span class="pre">data</span></tt> en el
+directorio de trabajo actual de lo contrario devolverá un error.</p>
+<p>Para verificar cual es nuestro directorio de trabajo actual podemos utilizar la
+función <tt class="docutils literal"><span class="pre">getwd()</span></tt>. Si en necesario lo podemos cambiar con la función
+<tt class="docutils literal"><span class="pre">setwd()</span></tt> tal y como se hizo en <a class="reference internal" href="introR_RStudio.html#un-primer-ejemplo"><em>Un primer ejemplo</em></a>.</p>
+</div>
+<div class="section" id="importar-y-exportar-desde-archivos-csv">
+<h3>Importar y exportar desde archivos .CSV<a class="headerlink" href="#importar-y-exportar-desde-archivos-csv" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Es posible crear archivos separados por comas, compatibles con las hojas de
+cálculo como EXCEL o LibreOffice Calc.</p>
+<div class="highlight-r"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre>var1 <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span>
+var2 <span class="o">&lt;-</span> <span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span> <span class="o">/</span> <span class="m">10</span>
+var3 <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&quot;R&quot;</span><span class="p">,</span> <span class="s">&quot;and&quot;</span><span class="p">,</span> <span class="s">&quot;Data Mining&quot;</span><span class="p">,</span> <span class="s">&quot;Examples&quot;</span><span class="p">,</span> <span class="s">&quot;Case Studies&quot;</span><span class="p">)</span>
+df1 <span class="o">&lt;-</span> data.frame<span class="p">(</span>var1<span class="p">,</span> var2<span class="p">,</span> var3<span class="p">)</span>
+names<span class="p">(</span>df1<span class="p">)</span> <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&quot;VariableInt&quot;</span><span class="p">,</span> <span class="s">&quot;VariableReal&quot;</span><span class="p">,</span> <span class="s">&quot;VariableChar&quot;</span><span class="p">)</span>
+write.csv<span class="p">(</span>df1<span class="p">,</span> <span class="s">&quot;./data/dummmyData.csv&quot;</span><span class="p">,</span> row.names <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+df2 <span class="o">&lt;-</span> read.csv<span class="p">(</span><span class="s">&quot;./data/dummmyData.csv&quot;</span><span class="p">)</span>
+print<span class="p">(</span>df2<span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Se crea el vector <tt class="docutils literal"><span class="pre">var1</span></tt> de forma similar al ejemplo anterior, para el
+vector <tt class="docutils literal"><span class="pre">var2</span></tt> se crea un vector con los valores correlativos del 1 al 5
+<tt class="docutils literal"><span class="pre">1:5</span></tt> y este valor se divide entre 10, es decir, se obtiene un nuevo vector
+en el que cada elemento es dividido por 10.</p>
+<div class="highlight-rconsole"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span class="go"> &gt; (1:5) / 10</span>
+<span class="go">[1] 0.1 0.2 0.3 0.4 0.5</span>
+</pre></div>
+</td></tr></table></div>
+<p>En estos casos se dice que el operador <tt class="docutils literal"><span class="pre">/</span></tt> está <em>vectorizado</em> ya que aplica a
+todo el vector. Es el comportamiento usual de los operadores aritméticos cuando
+se utilizan con vectores y matrices.</p>
+<p>El vector <tt class="docutils literal"><span class="pre">var3</span></tt> se contruye <em>combinando</em> valores distintos con la función
+<tt class="docutils literal"><span class="pre">c()</span></tt>. Esta es una de las formas más comunes de crear vectores en R. En este
+caso como los valores son cadenas de caracteres, el vector es de tipo
+<tt class="docutils literal"><span class="pre">character</span></tt>.</p>
+<p>Y con <tt class="docutils literal"><span class="pre">data.frame(var1,</span> <span class="pre">var2,</span> <span class="pre">var3)</span></tt> se crea un dataframe en el que cada
+columna se corresponde con los vectores recién creados. Nótese que los tres
+vectores en este caso tienen la misma longitud, de lo contrario se repetirían
+los valores de los vectores más pequeños hasta completar un número de registros
+igual al del vector más grande.</p>
+<div class="highlight-rconsole"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="gp">&gt; </span>data.frame<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
+<span class="go">   X1.2 X1.5 X1.10</span>
+<span class="go">1     1    1     1</span>
+<span class="go">2     2    2     2</span>
+<span class="go">3     1    3     3</span>
+<span class="go">4     2    4     4</span>
+<span class="go">5     1    5     5</span>
+<span class="go">6     2    1     6</span>
+<span class="go">7     1    2     7</span>
+<span class="go">8     2    3     8</span>
+<span class="go">9     1    4     9</span>
+<span class="go">10    2    5    10</span>
+</pre></div>
+</td></tr></table></div>
+<p>La sentencia <tt class="docutils literal"><span class="pre">names(df1)</span> <span class="pre">&lt;-</span> <span class="pre">c(&quot;VariableInt&quot;,</span> <span class="pre">&quot;VariableReal&quot;,</span> <span class="pre">&quot;VariableChar&quot;)</span></tt>
+establece los nombres de las columnas de <tt class="docutils literal"><span class="pre">df1</span></tt> cada valor del vector creado
+con la función <tt class="docutils literal"><span class="pre">c()</span></tt> se corresponde con cada una de las columnas.</p>
+<p>Al ejecutar <tt class="docutils literal"><span class="pre">write.csv(df1,</span> <span class="pre">&quot;./data/dummmyData.csv&quot;,</span> <span class="pre">row.names=FALSE)</span></tt> se
+genera un archivo separado por comas de nombre <tt class="docutils literal"><span class="pre">dummmyData.csv</span></tt> en la carpeta
+<tt class="docutils literal"><span class="pre">data</span></tt>. La opción <tt class="docutils literal"><span class="pre">row.names=FALSE</span></tt> indica que el archivo no va a incluir
+los nombres de fila (que son los números de fila por defecto) como un campo
+adicional.</p>
+<p>Finalmente, se cargan los datos del archivo recién creado en un nuevo dataframe
+<tt class="docutils literal"><span class="pre">df2</span></tt> con <tt class="docutils literal"><span class="pre">df2</span> <span class="pre">&lt;-</span> <span class="pre">read.csv(&quot;./data/dummmyData.csv&quot;)</span></tt> y se imprime su
+contenido para verificar que todo ha ido bien.</p>
+<p>Es posible trabajar de la misma forma con archivos de SAS, con archivos de EXCEL
+y con bases de datos, pero estas operaciones en general dependen del sistema
+operativo y del software instalado. Por ejemplo, en el caso de trabajar con los
+archivos de SAS hay que tener instalado SAS.</p>
+</div>
+</div>
+</div>
+
 
           <footer>
   
     <div class="rst-footer-buttons">
       
-        <a href="descriptivas.html" class="btn btn-neutral float-right" title="&lt;no title&gt;"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="descriptivas.html" class="btn btn-neutral float-right" title="Estadística descriptivas"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="introR_RStudio.html" class="btn btn-neutral" title="Motivación"><span class="icon icon-circle-arrow-left"></span> Previous</a>

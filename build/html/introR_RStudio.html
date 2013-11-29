@@ -47,7 +47,7 @@
 
   
     <link rel="top" title="Aprende R Haciendo 0.1 documentation" href="index.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="manejoDatos.html"/>
+        <link rel="next" title="Manejo de Datos" href="manejoDatos.html"/>
         <link rel="prev" title="Aprende R Haciendo" href="inicio.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -80,6 +80,15 @@
 <li class="toctree-l2"><a class="reference internal" href="#un-primer-ejemplo">Un primer ejemplo</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="manejoDatos.html">Manejo de Datos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manejoDatos.html#guardar-y-cargar-datos-en-r">Guardar y cargar datos en R</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="descriptivas.html">Estadística descriptivas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ggplot2.html">ggplot2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seriesTiempo.html">Series de Tiempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multivariante.html">Análisis Multivariante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reportesDinamicos.html">Reportes dinámicos</a></li>
 </ul>
 
         
@@ -110,29 +119,26 @@
   <div class="section" id="motivacion">
 <h1>Motivación<a class="headerlink" href="#motivacion" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>Hay un mito en la tecnociencia según la cual las herramientas &#8220;no son buenas
-ni malas, sino dependen de como se utilicen&#8221;. Sin embargo,
-las herramientas en efecto condicionan el quehacer, e incluso el sentido de
-la investigación científica. Este curso pretende enriquecer el abanico de las
-alternativas disponibles.</p>
+ni malas, sino dependen de como se utilicen&#8221;. Sin embargo, las herramientas en
+efecto condicionan el quehacer, e incluso el sentido de la investigación
+científica. Este curso pretende enriquecer el abanico de las alternativas
+disponibles.</p>
 <p>Se podría intentar ser políticamente correcto y decir que queda a juicio de
-cada quién decir si esta herramienta es mejor o peor que otras, pero no,
-este no es el caso. Desde el punto de vista de cualquier investigador
-riguroso el uso de R mejora con creces las funcionalidades que ofrece una
-hoja de cálculo, y en términos éticos y prácticos trabajar con software libre
-y de código abierto, basado en estándares abiertos, es sin duda una opción
-superior.</p>
+cada quién decir si R es mejor o peor que otras herramientas estadísticas. Sin
+embargo, desde el punto de vista de cualquier investigador riguroso el uso de R
+mejora con creces las funcionalidades que ofrece una hoja de cálculo, y en
+términos éticos y prácticos trabajar con software libre y de código abierto,
+basado en estándares abiertos, es sin duda una opción superior.</p>
 <p>Muchos profesionales de la informática una vez graduados evaden las tareas de
-programación, de manera similar a como muchas personas evaden las
-matemáticas tanto como pueden. Esto se debe a que tanto una como la otra
-son, por lo general, muy mal enseñadas. En la actualidad,
-la programación es una destreza básica y fundamental al alcance de cualquier
-persona.</p>
-<p>Estas notas buscan son una presentación de R basada en ejemplos,
-en lugar de hacer repaso pormenorizado de todos los conceptos y elementos del
-entorno R, se trabajará en base a demostraciones del flujo de trabajo usual
-para muchos usuarios de R con lo cuál se espera que cada persona gane
-comprensión de los retos y oportunidades que ofrece el uso de una
-herramienta de este tipo.</p>
+programación, de manera similar a como muchas personas evaden las matemáticas
+tanto como pueden. Esto se debe a que tanto una como la otra son, por lo
+general, muy mal enseñadas. En la actualidad, la programación es una destreza
+básica y fundamental al alcance de cualquier persona.</p>
+<p>Estas notas buscan son una presentación de R basada en ejemplos, en lugar de
+hacer repaso pormenorizado de todos los conceptos y elementos del entorno R, se
+trabajará en base a demostraciones del flujo de trabajo usual para muchos
+usuarios de R con lo cuál se espera que cada persona gane comprensión de los
+retos y oportunidades que ofrece el uso de una herramienta de este tipo.</p>
 <div class="section" id="que-es-r">
 <h2>¿Qué es R?<a class="headerlink" href="#que-es-r" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>R es un lenguaje de programación, que se ejecuta sobre un entorno que ofrece
@@ -141,11 +147,11 @@ estadística computacional, y mecanismos para extender sus funcionalidades.
 Por lo tanto, el correcto manejo de R implica desarrollar destrezas de
 programación.</p>
 <p>R cuenta con el conjunto más extenso de métodos estadísticos disponibles en
-cualquier software estadístico, ya sea libre o privativo,
-además de potentes y flexibles capacidades de graficación. Sin embargo,
-el diseño de R en tanto que lenguaje de programación,
-presenta debilidades que han motivado críticas incluso por sus usuarios más
-fieles, un ejemplo de esto es el libro <a class="reference external" href="http://www.burns-stat.com/pages/Tutor/R_inferno.pdf‎">The R inferno</a>.</p>
+cualquier software estadístico, ya sea libre o privativo, además de potentes y
+flexibles capacidades de graficación. Sin embargo, el diseño de R en tanto que
+lenguaje de programación, presenta debilidades que han motivado críticas
+incluso por sus usuarios más fieles, un ejemplo de esto es el libro
+<a class="reference external" href="http://www.burns-stat.com/pages/Tutor/R_inferno.pdf‎">The R inferno</a>.</p>
 </div>
 <div class="section" id="descarga-e-instalacion">
 <h2>Descarga e instalación<a class="headerlink" href="#descarga-e-instalacion" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -163,8 +169,8 @@ distribuciones está algo desactualizada, esto no es conveniente porque se
 pueden tener incompatibilidad con los paquetes propios de R.</p>
 <p>Para resolver esto se configuran los repositorios según la información que
 aparece en: <a class="reference external" href="http://cran.r-project.org/bin/linux/">http://cran.r-project.org/bin/linux/</a></p>
-<p>Se generan paquetes de las últimas versiones de R para Debian, Redhat,
-SUSE y Ubuntu, si utiliza una distribución que no es compatible con ninguno
+<p>Se generan paquetes de las últimas versiones de R para Debian, Redhat, SUSE y
+Ubuntu, si utiliza una distribución que no es compatible con ninguno
 de estos repositorios, puede compilar la última versión de R desde las fuentes
 <a class="reference external" href="http://cran.r-project.org/sources.html">http://cran.r-project.org/sources.html</a></p>
 <p>R También está empaquetado para MacOSX Snow Leonard y superior</p>
@@ -211,9 +217,9 @@ frecuencia afectan a los demás.</p>
 <h3>Estructura de un proyecto<a class="headerlink" href="#estructura-de-un-proyecto" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se recomienda que cada proyecto tenga una estructura de archivos con las
 carpetas: (puede traducir los nombres si lo desea): <tt class="docutils literal"><span class="pre">data</span></tt>, <tt class="docutils literal"><span class="pre">documents</span></tt>,
-<tt class="docutils literal"><span class="pre">graphics</span></tt>, <tt class="docutils literal"><span class="pre">images</span></tt>, <tt class="docutils literal"><span class="pre">notes</span></tt>, <tt class="docutils literal"><span class="pre">code</span></tt>. U otra estructura adaptada a las
-preferencias del investigador, cualquiera es mejor que tener todos los archivos
-sueltos en una misma carpeta.</p>
+<tt class="docutils literal"><span class="pre">graphics</span></tt> , <tt class="docutils literal"><span class="pre">images</span></tt>, <tt class="docutils literal"><span class="pre">notes</span></tt>, <tt class="docutils literal"><span class="pre">code</span></tt>. También puede ser otra
+estructura adaptada a las preferencias del investigador, cualquiera es mejor que
+tener todos los archivos sueltos en una misma carpeta.</p>
 <p>Ilustración 2: Estructura de un proyecto de análisis de datos</p>
 <p>También es recomendable, si se utiliza RStudio, utilizar <em>proyectos</em> con el fin
 de gestionar los entornos de trabajo de manera que cada uno esté asociado a
@@ -221,8 +227,23 @@ un espacio de trabajo, un historial, y un código bien diferenciado.</p>
 </div>
 </div>
 <div class="section" id="un-primer-ejemplo">
-<h2>Un primer ejemplo<a class="headerlink" href="#un-primer-ejemplo" title="Enlazar permanentemente con este título">¶</a></h2>
-<div class="highlight-r"><div class="highlight"><pre>setwd<span class="p">(</span><span class="s">&quot;[ruta a]/myRfolder/&quot;</span><span class="p">)</span>
+<span id="id1"></span><h2>Un primer ejemplo<a class="headerlink" href="#un-primer-ejemplo" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Empecemos por abrir en RStudio el archivo <tt class="docutils literal"><span class="pre">simpleRprogram.R</span></tt>.</p>
+<p>A continuación se va a ejecutar el programa línea por línea usando el botón
+<tt class="docutils literal"><span class="pre">Run</span></tt> que está en la parte superior derecha del editor.</p>
+<div class="highlight-r"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre>setwd<span class="p">(</span><span class="s">&quot;[ruta a]/myRfolder/&quot;</span><span class="p">)</span>
 mydata <span class="o">&lt;-</span> read.csv<span class="p">(</span><span class="s">&quot;mydata.csv&quot;</span><span class="p">)</span>
 mydata
 
@@ -236,7 +257,62 @@ summary<span class="p">(</span>myModel<span class="p">)</span>
 anova<span class="p">(</span>myModel<span class="p">)</span>
 plot<span class="p">(</span>myModel<span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
+<p>La función <tt class="docutils literal"><span class="pre">setwd()</span></tt> (establecer directorio de trabajo) indica a R cual va a
+ser el directorio que va a tomar como referencia para acceder a los archivos.</p>
+<p>La expresión <tt class="docutils literal"><span class="pre">mydata</span> <span class="pre">&lt;-</span> <span class="pre">read.csv(&quot;mydata.csv&quot;)</span></tt> utiliza la función
+<tt class="docutils literal"><span class="pre">read.csv()</span></tt> para leer el archivo separado por comas <tt class="docutils literal"><span class="pre">mydata.csv</span></tt>. El
+resultado que es un objeto <em>dataframe</em> lo asigna mediante el operador <tt class="docutils literal"><span class="pre">&lt;-</span></tt>
+a la variable <tt class="docutils literal"><span class="pre">mydata</span></tt>.</p>
+<p>Un objeto <tt class="docutils literal"><span class="pre">dataframe</span></tt> es una estructura de datos de tipo tabla en la que cada
+columna es un <em>campo</em> y cada fila un <em>registro</em> de forma similar a como se
+almacenan los datos en una base de datos o en una hoja de cálculo.</p>
+<p>Como estamos ejecutando el archivo línea por línea, y por lo tanto estamos en
+el <em>modo interactivo</em> al ejecutar la línea 3 donde aparece <tt class="docutils literal"><span class="pre">mydata</span></tt> mostrará
+en la consola el contenido del objeto.</p>
+<div class="highlight-rconsole"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span class="gp">&gt; </span>mydata
+<span class="go">  workshop gender q1 q2 q3 q4</span>
+<span class="go">1        1      f  1  1  5  1</span>
+<span class="go">2        2      f  2  1  4  1</span>
+<span class="go">3        1      f  2  2  4  3</span>
+<span class="go">4        2         3  1 NA  3</span>
+<span class="go">5        1      m  4  5  2  4</span>
+<span class="go">6        2      m  5  4  5  5</span>
+<span class="go">7        1      m  5  3  4  4</span>
+<span class="go">8        2      m  4  5  5  5</span>
+</pre></div>
+</td></tr></table></div>
+<p>Al leer del archivo el campo <tt class="docutils literal"><span class="pre">workshop</span></tt> se considera de tipo numérico. Para
+que R lo interprete como un campo categórico se utiliza la función <tt class="docutils literal"><span class="pre">factor()</span></tt>.</p>
+<p>En la siguiente línea, la función <tt class="docutils literal"><span class="pre">summary()</span></tt> devuelve las estadísticas
+descriptivas básicas de cada uno de los campos. Nótese como el campo Workshop
+muestra un conteo de la ocurrencia de cada categoría &#8220;1&#8221; y &#8220;2&#8221;.</p>
+<p>La función <tt class="docutils literal"><span class="pre">plot()</span></tt> genera un gráfico de dispersión entre los valores en los
+campos <tt class="docutils literal"><span class="pre">q1</span></tt> y <tt class="docutils literal"><span class="pre">q4</span></tt>, para acceder a estos valores se utiliza la notación
+<tt class="docutils literal"><span class="pre">mydata$q1</span></tt> que hace referencia a los valores del campo <tt class="docutils literal"><span class="pre">q1</span></tt> como un vector
+numérico.</p>
+<p>A continuación, se quiere construir un modelo lineal, en este caso como la
+respuesta <tt class="docutils literal"><span class="pre">q4</span></tt> se explica mediante las contribuciones de <tt class="docutils literal"><span class="pre">q1</span></tt>, <tt class="docutils literal"><span class="pre">q2</span></tt> y
+<tt class="docutils literal"><span class="pre">q3</span></tt>. Para lo cual se escribe la fórmula <tt class="docutils literal"><span class="pre">q4</span> <span class="pre">~</span> <span class="pre">q1</span> <span class="pre">+</span> <span class="pre">q2</span> <span class="pre">+</span> <span class="pre">q3</span></tt>. El argumento
+<tt class="docutils literal"><span class="pre">data=mydata</span></tt> indica a R de cual conjunto de datos toma las variables.</p>
+<p>El resultado se asigna a la variable <tt class="docutils literal"><span class="pre">myModel</span></tt> en este caso es un objeto de
+la clase <tt class="docutils literal"><span class="pre">lm</span></tt>. Esta es una estructura que contiene los componentes generados
+durante el ajuste: <tt class="docutils literal"><span class="pre">coefficients</span></tt>, <tt class="docutils literal"><span class="pre">residuals</span></tt>, <tt class="docutils literal"><span class="pre">fitted.values</span></tt>, entre
+otros.</p>
+<p>A este modelo lineal se le puede aplicar un análisis de varianza mediante la
+función <tt class="docutils literal"><span class="pre">anova()</span></tt>, y finalmente se genera un conjunto de gráficos
+predefinidos para el modelo lineal con <tt class="docutils literal"><span class="pre">plot(myModel)</span></tt>. Hay muchas funciones
+como <tt class="docutils literal"><span class="pre">plot()</span></tt> y <tt class="docutils literal"><span class="pre">summary()</span></tt> que responden de forma distinta dependiendo del
+argumento de entrada.</p>
 </div>
 </div>
 
@@ -245,7 +321,7 @@ plot<span class="p">(</span>myModel<span class="p">)</span>
   
     <div class="rst-footer-buttons">
       
-        <a href="manejoDatos.html" class="btn btn-neutral float-right" title="&lt;no title&gt;"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="manejoDatos.html" class="btn btn-neutral float-right" title="Manejo de Datos"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="inicio.html" class="btn btn-neutral" title="Aprende R Haciendo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
