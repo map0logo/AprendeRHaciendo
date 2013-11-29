@@ -138,10 +138,18 @@ También es recomendable, si se utiliza RStudio, utilizar *proyectos* con el fin
 de gestionar los entornos de trabajo de manera que cada uno esté asociado a
 un espacio de trabajo, un historial, y un código bien diferenciado.
 
+.. _un-primer-ejemplo:
+
 Un primer ejemplo
 =================
 
+Empecemos por abrir en RStudio el archivo ``simpleRprogram.R``.
+
+A continuación se va a ejecutar el programa línea por línea usando el botón
+``Run`` que está en la parte superior derecha del editor.
+
 .. code-block:: r
+   :linenos:
 
    setwd("[ruta a]/myRfolder/")
    mydata <- read.csv("mydata.csv")
@@ -157,5 +165,62 @@ Un primer ejemplo
    anova(myModel)
    plot(myModel)
 
+La función ``setwd()`` (establecer directorio de trabajo) indica a R cual va a
+ser el directorio que va a tomar como referencia para acceder a los archivos.
+
+La expresión ``mydata <- read.csv("mydata.csv")`` utiliza la función
+``read.csv()`` para leer el archivo separado por comas ``mydata.csv``. El
+resultado que es un objeto *dataframe* lo asigna mediante el operador ``<-``
+a la variable ``mydata``.
+
+Un objeto ``dataframe`` es una estructura de datos de tipo tabla en la que cada
+columna es un *campo* y cada fila un *registro* de forma similar a como se
+almacenan los datos en una base de datos o en una hoja de cálculo.
+
+Como estamos ejecutando el archivo línea por línea, y por lo tanto estamos en
+el *modo interactivo* al ejecutar la línea 3 donde aparece ``mydata`` mostrará
+en la consola el contenido del objeto.
+
+.. code-block:: rconsole
+   :linenos:
+
+   > mydata
+     workshop gender q1 q2 q3 q4
+   1        1      f  1  1  5  1
+   2        2      f  2  1  4  1
+   3        1      f  2  2  4  3
+   4        2         3  1 NA  3
+   5        1      m  4  5  2  4
+   6        2      m  5  4  5  5
+   7        1      m  5  3  4  4
+   8        2      m  4  5  5  5
+
+Al leer del archivo el campo ``workshop`` se considera de tipo numérico. Para
+que R lo interprete como un campo categórico se utiliza la función ``factor()``.
+
+En la siguiente línea, la función ``summary()`` devuelve las estadísticas
+descriptivas básicas de cada uno de los campos. Nótese como el campo Workshop
+muestra un conteo de la ocurrencia de cada categoría "1" y "2".
+
+La función ``plot()`` genera un gráfico de dispersión entre los valores en los
+campos ``q1`` y ``q4``, para acceder a estos valores se utiliza la notación
+``mydata$q1`` que hace referencia a los valores del campo ``q1`` como un vector
+numérico.
+
+A continuación, se quiere construir un modelo lineal, en este caso como la
+respuesta ``q4`` se explica mediante las contribuciones de ``q1``, ``q2`` y
+``q3``. Para lo cual se escribe la fórmula ``q4 ~ q1 + q2 + q3``. El argumento
+``data=mydata`` indica a R de cual conjunto de datos toma las variables.
+
+El resultado se asigna a la variable ``myModel`` en este caso es un objeto de
+la clase ``lm``. Esta es una estructura que contiene los componentes generados
+durante el ajuste: ``coefficients``, ``residuals``, ``fitted.values``, entre
+otros.
+
+A este modelo lineal se le puede aplicar un análisis de varianza mediante la
+función ``anova()``, y finalmente se genera un conjunto de gráficos
+predefinidos para el modelo lineal con ``plot(myModel)``. Hay muchas funciones
+como ``plot()`` y ``summary()`` que responden de forma distinta dependiendo del
+argumento de entrada.
 
 .. _The R inferno: http://www.burns-stat.com/pages/Tutor/R_inferno.pdf‎
