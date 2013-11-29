@@ -110,10 +110,82 @@ Finalmente, se cargan los datos del archivo recién creado en un nuevo dataframe
 ``df2`` con ``df2 <- read.csv("./data/dummmyData.csv")`` y se imprime su
 contenido para verificar que todo ha ido bien.
 
-Es posible trabajar de la misma forma con archivos de SAS, con archivos de EXCEL
-y con bases de datos, pero estas operaciones en general dependen del sistema
-operativo y del software instalado. Por ejemplo, en el caso de trabajar con los
-archivos de SAS hay que tener instalado SAS.
 
+.. note:: Archivos SAS, EXCEL y Bases de datos
+
+   Es posible trabajar de la misma forma con archivos de SAS, con archivos de
+   EXCEL y con bases de datos, pero estas operaciones en general dependen del
+   sistema operativo y del software instalado. Por ejemplo, en el caso de
+   trabajar con los archivos de SAS hay que tener instalado SAS.
+
+
+Acceder a los datos
+===================
+
+El conjunto de datos iris
+-------------------------
+
+Es un conjunto incorporado a R de manera que no necesita ser cargado. Consiste
+en 50 muestras de tres clases de flores de iris.
+
+Este conjunto de datos es clásico y cuenta incluso con su propia página web
+http://en.wikipedia.org/wiki/Iris_flower_data_set
+
+Una clase de flores es linealmente separable de las otras dos, mientras que las
+dos últimas no son linealmente separables la una de la otra. El conjunto cuenta
+con cinco datos:
+
+* longitud de los sépalos en cm,
+* ancho de los sépalos en cm,
+* longitud de los pétalos cm,
+* ancho de los petalos en cm, y
+* clase: Iris Setosa, Iris Versicolour, e Iris Virginica.
+
+Revisar los datos
+-----------------
+
+.. code-block:: r
+   :linenos:
+
+   dim(iris)
+   names(iris)
+   str(iris)
+   attributes(iris)
+
+Con las funciones dadas se obtiene las *dimensiones* del conjunto de datos
+``dim()``, los *nombres* de los campos ``names()``, una descripción compacta
+de la *estructura* ``str()``, y una versión extendida de los *atributos*
+``attributes()``.
+
+.. code-block:: r
+   :linenos:
+
+   iris[1:5, ]
+   head(iris)
+   tail(iris)
+
+Los dataframe se pueden ver como matrices a los que se accede por filas y
+columnas de la forma ``df[fil, col]``. Así, la sentencia ``iris[1:5, ]``
+devuelve todas los campos (ya que después de la columna está vacío) para los
+primeros cinco registros (filas de la 1 a la 5).
+
+Las funciones ``head()`` y ``tail()`` devuelven los primeros y los últimos
+registros de un conjunto de datos, por defecto 6, aunque se puede establecer
+con el parámetro ``n=``.
+
+.. code-block:: rconsole
+   :linenos:
+
+   > iris[1:10, "Sepal.Length"]
+   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9
+   > iris$Sepal.Length[1:10]
+   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9
+
+También es posible los valores de una columna en particular, en el código
+anterior se muestran dos formas alternativas de obtener los valores del campo
+``Sepal.length`` en los diez primeros registros. En el primer caso utilizando
+notación matricial ``iris[1:10, "Sepal.Length"]``, y en el segundo accediendo
+primero al campo mediante la notación ``objeto$campo`` y luego extrayendo los
+primeros diez valores mediante ``[1:10]``.
 
 
